@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie</title>
+</head>
+
+<body>
+
+x1: <input id="x1" value="30"><br><br>
+x2: <input id="x2" value="2"><br><br>
+
+<button onclick="oblicz()">Oblicz</button>
+
+<p id="wynik"></p>
+
+<script>
+function oblicz() {
+
+    let x1 = Number(document.getElementById("x1").value);
+    let x2 = Number(document.getElementById("x2").value);
+
+    let n = 5; // liczba liter imienia
+
+    // stopnie na radiany
+    let rad = x1 * Math.PI / 180;
+
+    // y1
+    let y1 = 3 * Math.pow(x1, n) + 2;
+
+    // y2
+    let y2 = 2 * Math.cos(rad) + 3 * Math.sin(rad);
+
+    // y3
+    let y3 = Math.cbrt(
+        Math.pow(x1, 5) + 2 * Math.pow(x2, 4) * Math.abs(x1 - x2)
+    );
+
+    document.getElementById("wynik").innerHTML =
+        "x1 = " + x1 + " &nbsp;&nbsp; x2 = " + x2 + "<br>" +
+        "x1 = " + x1 + "° &nbsp;&nbsp; x1 = " + rad.toFixed(2) + " rad<br><br>" +
+        "y1 = " + y1.toFixed(2) + "<br>" +
+        "y2 = " + y2.toFixed(2) + "<br>" +
+        "y3 = " + y3.toFixed(2);
+}
+</script>
+
+</body>
+</html>

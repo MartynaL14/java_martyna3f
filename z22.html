@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Pole i obwód</title>
+</head>
+
+<body>
+
+a: <input id="a_dana_lesz"><br><br>
+b: <input id="b_dana_lesz"><br><br>
+
+<button onclick="oblicz()">Oblicz</button>
+
+<table border="1">
+    <tr>
+        <td>Pole</td>
+        <td id="wyprowadz_pole_lesz"></td>
+    </tr>
+    <tr>
+        <td>Obwód</td>
+        <td id="wyprowadz_obwod_lesz"></td>
+    </tr>
+</table>
+
+<br>
+
+pole: <input id="pole"><br><br>
+obw: <input id="obw">
+
+<script>
+function Pole_leszczynska(a_lesz, b_lesz) {
+    return a_lesz * b_lesz;
+}
+
+function obwod_leszczynska(a_lesz, b_lesz) {
+    return 2 * (a_lesz + b_lesz);
+}
+
+function oblicz() {
+    let a_lesz = Number(document.getElementById("a_dana_lesz").value);
+    let b_lesz = Number(document.getElementById("b_dana_lesz").value);
+
+    let p = Pole_leszczynska(a_lesz, b_lesz);
+    let o = obwod_leszczynska(a_lesz, b_lesz);
+
+    document.getElementById("wyprowadz_pole_lesz").innerHTML = p;
+    document.getElementById("wyprowadz_obwod_lesz").innerHTML = o;
+
+    document.getElementById("pole").value = p;
+    document.getElementById("obw").value = o;
+}
+</script>
+
+</body>
+</html>

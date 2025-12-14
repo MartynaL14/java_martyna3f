@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 20</title>
+</head>
+
+<body>
+
+<h3>Punkty trójkąta</h3>
+
+A:
+x <input id="xa_lesz">
+y <input id="ya_lesz"><br><br>
+
+B:
+x <input id="xb_lesz">
+y <input id="yb_lesz"><br><br>
+
+C:
+x <input id="xc_lesz">
+y <input id="yc_lesz"><br><br>
+
+<button onclick="oblicz()">Oblicz</button>
+
+<p id="wynik"></p>
+
+<script>
+function AB_lesz(xa_lesz, ya_lesz, xb_lesz, yb_lesz) {
+    return Math.sqrt((xb_lesz - xa_lesz) ** 2 + (yb_lesz - ya_lesz) ** 2);
+}
+
+function BC_lesz(xb_lesz, yb_lesz, xc_lesz, yc_lesz) {
+    return Math.sqrt((xc_lesz - xb_lesz) ** 2 + (yc_lesz - yb_lesz) ** 2);
+}
+
+function AC_lesz(xa_lesz, ya_lesz, xc_lesz, yc_lesz) {
+    return Math.sqrt((xc_lesz - xa_lesz) ** 2 + (yc_lesz - ya_lesz) ** 2);
+}
+
+function oblicz() {
+    let xa_lesz = Number(document.getElementById("xa_lesz").value);
+    let ya_lesz = Number(document.getElementById("ya_lesz").value);
+    let xb_lesz = Number(document.getElementById("xb_lesz").value);
+    let yb_lesz = Number(document.getElementById("yb_lesz").value);
+    let xc_lesz = Number(document.getElementById("xc_lesz").value);
+    let yc_lesz = Number(document.getElementById("yc_lesz").value);
+
+    document.getElementById("wynik").innerHTML =
+        "AB = " + AB_lesz(xa_lesz, ya_lesz, xb_lesz, yb_lesz) + "<br>" +
+        "BC = " + BC_lesz(xb_lesz, yb_lesz, xc_lesz, yc_lesz) + "<br>" +
+        "AC = " + AC_lesz(xa_lesz, ya_lesz, xc_lesz, yc_lesz);
+}
+</script>
+
+</body>
+</html>

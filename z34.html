@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 34</title>
+</head>
+<body>
+
+<ul id="lista"></ul>
+
+<script>
+function User(email, avatar) {
+    this.email = email;
+    this.avatar = avatar;
+}
+
+function UserView(user) {
+    this.user = user;
+    this.dom = document.createElement("li");
+    this.refresh();
+}
+
+UserView.prototype.refresh = function() {
+    this.dom.innerHTML =
+        "<img src='" + this.user.avatar + "' width='40'> " +
+        "<a href='mailto:" + this.user.email + "'>" + this.user.email + "</a>";
+};
+
+var user = new User("uczen@szkola.pl", "https://via.placeholder.com/40");
+var view = new UserView(user);
+document.getElementById("lista").appendChild(view.dom);
+</script>
+
+</body>
+</html>

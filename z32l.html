@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 32</title>
+</head>
+<body>
+
+<button onclick="osoba1.wypisz()">Osoba 1</button>
+<button onclick="osoba2.wypisz()">Osoba 2</button>
+
+<script>
+function Klient(nazwisko, imie, zawod, wiek) {
+    this.nazwisko = nazwisko;
+    this.imie = imie;
+    this.zawod = zawod;
+    this.wiek = wiek;
+}
+
+Klient.prototype.wypisz = function() {
+    alert(this.nazwisko + " " + this.imie + " " + this.zawod + " " + this.wiek);
+};
+
+var osoba1 = new Klient("Kowalski", "Jan", "kierowca", 30);
+var osoba2 = new Klient("Nowak", "Anna", "sekretarka", 28);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 31</title>
+</head>
+<body>
+
+<button onclick="samochod_pokaz_kowalski()">Pokaż nowe dane</button>
+
+<script>
+var samochod = {
+    marka: "Toyota",
+    rok: 2015,
+    kolor: "niebieski"
+};
+
+samochod.vmax = 220;
+
+samochod.samochod_pokaz_kowalski = function() {
+    alert("Vmax: " + this.vmax);
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 33</title>
+</head>
+<body>
+
+<input id="email" placeholder="email">
+<input id="haslo" type="password" placeholder="hasło">
+<button onclick="login()">Zaloguj</button>
+
+<script>
+function User(email, password, avatar) {
+    this.email = email;
+    this.password = password;
+    this.avatar = avatar;
+}
+
+var userList = {
+    users: [],
+    addUser: function(user) {
+        this.users.push(user);
+    },
+    login: function(email, password) {
+        return this.users.some(u => u.email === email && u.password === password);
+    }
+};
+
+userList.addUser(new User("test@test.pl", "1234", ""));
+
+function login() {
+    var ok = userList.login(
+        email.value,
+        haslo.value
+    );
+    alert(ok ? "Zalogowano" : "Błąd logowania");
+}
+</script>
+
+</body>
+</html>
